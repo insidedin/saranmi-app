@@ -12,13 +12,4 @@ class Admin extends BaseController
         return view('pageadmin/admin');
     }
 
-    public function login()
-    {
-        return view('pageadmin/login');
-    }
-
-    public function tb_berita()
-    {
-        return view('pageadmin/tb_berita');
-    }
 }

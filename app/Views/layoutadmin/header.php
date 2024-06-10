@@ -3,7 +3,7 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="" class="logo d-flex align-items-center">
                 <img src="/page/assets/img/logomi.png" alt="">
                 <span class="d-none d-lg-block">SARAN MI</span>
             </a>
