@@ -26,37 +26,37 @@ class Pengaduan extends Controller
     }
 
     public function storePengaduan()
-    {
-        $model = new PengaduanModel();
+{
+    $model = new PengaduanModel();
 
-        $file = $this->request->getFile('gambar');
-        if ($file->isValid() && !$file->hasMoved()) {
-            $fileName = $file->getRandomName();
-            $file->move(WRITEPATH . 'uploads', $fileName);
-        } else {
-            $fileName = null;
-        }
-
-        $data = [
-            'perihal' => $this->request->getPost('perihal'),
-            'deskripsi' => $this->request->getPost('deskripsi'),
-            'pengadu' => $this->request->getPost('pengadu'),
-            'gambar' => $fileName,
-            'tanggal_pengaduan' => $this->request->getPost('tanggal_pengaduan'),
-            'status' => 'menunggu'
-        ];
-
-        $model->save($data);
-
-        return redirect()->to('/pengaduan/create-pengaduan')->with('message', 'Pengaduan berhasil disimpan');
+    $file = $this->request->getFile('gambar');
+    if ($file->isValid() && !$file->hasMoved()) {
+        $fileName = $file->getRandomName();
+        $file->move(WRITEPATH . 'uploads', $fileName);
+    } else {
+        $fileName = null;
     }
+
+    $data = [
+        'perihal' => $this->request->getPost('perihal'),
+        'deskripsi' => $this->request->getPost('deskripsi'),
+        'pengadu' => $this->request->getPost('pengadu'),
+        'gambar' => $fileName,
+        'tanggal_pengaduan' => $this->request->getPost('tanggal_pengaduan'),
+        'status' => 'menunggu'
+    ];
+
+    $model->save($data);
+
+    return redirect()->to('/pengaduan/create-pengaduan')->with('message', 'Pengaduan berhasil disimpan');
+}
 
 
     public function managePengaduan()
     {
         $model = new PengaduanModel();
         $data['pengaduan'] = $model->findAll();
-        return view('admin/manage_pengaduan', $data);
+        return view('pengaduan/index', $data);
     }
 
     public function editPengaduan($id)
@@ -86,13 +86,13 @@ class Pengaduan extends Controller
 
         $model->update($id, $data);
 
-        return redirect()->to('/admin/manage-pengaduan')->with('message', 'Pengaduan berhasil diperbarui');
+        return redirect()->to('pengaduan/index')->with('message', 'Pengaduan berhasil diperbarui');
     }
 
     public function deletePengaduan($id)
     {
         $model = new PengaduanModel();
         $model->delete($id);
-        return redirect()->to('/admin/manage-pengaduan');
+        return redirect()->to('pengaduan/index');
     }
 }

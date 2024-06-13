@@ -1,32 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Pengaduan</title>
-</head>
-<body>
-    <h1>Edit Pengaduan</h1>
-    <form action="/pengaduan/update/<?= $pengaduan['id'] ?>" method="post">
-        <label for="perihal">Perihal:</label>
-        <input type="text" name="perihal" id="perihal" value="<?= $pengaduan['perihal'] ?>" required>
-        <br>
-        <label for="deskripsi">Deskripsi:</label>
-        <textarea name="deskripsi" id="deskripsi" required><?= $pengaduan['deskripsi'] ?></textarea>
-        <br>
-        <label for="pengadu">Pengadu:</label>
-        <input type="text" name="pengadu" id="pengadu" value="<?= $pengaduan['pengadu'] ?>" required>
-        <br>
-        <label for="gambar">Gambar:</label>
-        <input type="text" name="gambar" id="gambar" value="<?= $pengaduan['gambar'] ?>" required>
-        <br>
-        <label for="tanggal_pengaduan">Tanggal Pengaduan:</label>
-        <input type="date" name="tanggal_pengaduan" id="tanggal_pengaduan" value="<?= $pengaduan['tanggal_pengaduan'] ?>" required>
-        <br>
-        <label for="status">Status:</label>
-        <input type="text" name="status" id="status" value="<?= $pengaduan['status'] ?>" required>
-        <br>
-        <button type="submit">Simpan</button>
-    </form>
-</body>
-</html>
+<?= $this->extend('layoutadmin/template'); ?>
+
+<?= $this->section('isi'); ?>
+
+<main id="main" class="main">
+    <div class="pagetitle">
+        <h1>Edit Pengaduan</h1>
+    </div><!-- End Page Title -->
+
+    <section class="section">
+        <div class="card">
+            <div class="card-body">
+                <form action="/pengaduan/update/<?= $pengaduan['id'] ?>" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="perihal" class="form-label">Perihal:</label>
+                        <input type="text" name="perihal" id="perihal" class="form-control" value="<?= $pengaduan['perihal'] ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="deskripsi" class="form-label">Deskripsi:</label>
+                        <textarea name="deskripsi" id="deskripsi" class="form-control" required><?= $pengaduan['deskripsi'] ?></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="pengadu" class="form-label">Pengadu:</label>
+                        <input type="text" name="pengadu" id="pengadu" class="form-control" value="<?= $pengaduan['pengadu'] ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="gambar" class="form-label">Gambar:</label>
+                        <input type="file" name="gambar" id="gambar" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label for="tanggal_pengaduan" class="form-label">Tanggal Pengaduan:</label>
+                        <input type="date" name="tanggal_pengaduan" id="tanggal_pengaduan" class="form-control" value="<?= $pengaduan['tanggal_pengaduan'] ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Status:</label>
+                        <input type="text" name="status" id="status" class="form-control" value="<?= $pengaduan['status'] ?>" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</main><!-- End #main -->
+
+<?= $this->endSection(); ?>

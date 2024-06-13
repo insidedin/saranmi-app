@@ -37,7 +37,6 @@
                                 <td><?= $row['tanggal_pengaduan']; ?></td>
                                 <td><?= $row['status']; ?></td>
                                 <td>
-                                    <a href="/pengaduan/edit/<?= $row['id']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                     <a href="/pengaduan/delete/<?= $row['id']; ?>" class="btn btn-danger btn-sm">Delete</a>
                                 </td>
                             </tr>

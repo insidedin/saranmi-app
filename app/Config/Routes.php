@@ -5,7 +5,7 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+$routes->get('/home', 'Home::index');
 
 $routes->get('/home', 'Page::home');
 $routes->get('/login', 'Page::login');
@@ -35,9 +35,10 @@ $routes->post('/users/update/(:num)', 'Users::update/$1');
 $routes->get('/users/delete/(:num)', 'Users::delete/$1');
 
 $routes->get('/pengaduan', 'Pengaduan::index');
+$routes->get('/pengaduan/index', 'Pengaduan::index');
 $routes->post('/pengaduan/store', 'Pengaduan::store');
-$routes->get('/pengaduan/edit/(:num)', 'Pengaduan::edit/$1');
-$routes->post('/pengaduan/update/(:num)', 'Pengaduan::update/$1');
+$routes->get('/pengaduan/edit/(:num)', 'Pengaduan::editPengaduan/$1');
+$routes->post('/pengaduan/update/(:num)', 'Pengaduan::updatePengaduan/$1');
 $routes->get('/pengaduan/delete/(:num)', 'Pengaduan::delete/$1');
 
 $routes->get('/pengaduanuser/indexuser', 'Pengaduan::indexuser');
@@ -46,7 +47,7 @@ $routes->get('/pengaduanuser/create', 'Pengaduan::create');
 $routes->get('/pengaduan/create-pengaduan', 'Pengaduan::createPengaduan');
 $routes->post('/pengaduan/store-pengaduan', 'Pengaduan::storePengaduan');
 
-$routes->get('/admin/manage-pengaduan', 'PengaduanController::managePengaduan');
-$routes->get('/admin/edit-pengaduan/(:num)', 'PengaduanController::editPengaduan/$1');
-$routes->post('/admin/update-pengaduan/(:num)', 'PengaduanController::updatePengaduan/$1');
-$routes->get('/admin/delete-pengaduan/(:num)', 'PengaduanController::deletePengaduan/$1');
+
+$routes->get('/login', 'AuthController::login');
+$routes->post('/login', 'AuthController::authenticate');
+$routes->get('/logout', 'AuthController::logout');
