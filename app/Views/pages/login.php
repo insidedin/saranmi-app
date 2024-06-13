@@ -36,11 +36,11 @@
                                             </div>
 
                                             <div class="col-12">
-                                                <button class="btn btn-pink w-100" type="submit">Login</button>
+                                                <button class="btn btn-pink w-100" type="submit" href="">Login</button>
                                             </div>
 
                                             <div class="col-12 text-center mt-3">
-                                                <a href="#home" class="back-to-home">Kembali ke Home</a>
+                                                <a href="/home" class="back-to-home">Kembali ke Home</a>
                                             </div>
                                         </form>
                                     </div>

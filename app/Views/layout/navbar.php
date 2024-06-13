@@ -12,7 +12,7 @@
         <li><a href="#home" class="<?= (($title == 'Home')) ? 'active' : ''; ?>">Home</a></li>
         <li><a href="#layanan" class="<?= (($title == 'Home')) ? 'active' : ''; ?>">Tentang Aplikasi</a></li>
         <li><a href="#sarana" class="<?= (($title == 'Home')) ? 'active' : ''; ?>">Sarana & Prasarana</a></li>
-        <li><a class="btn" href="#login">Masuk</a></li>
+        <li><a class="btn" href="/login">Masuk</a></li>
     </ul>
     <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
 </nav>

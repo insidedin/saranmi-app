@@ -1,6 +1,7 @@
 <?= $this->extend('layoutadmin/template'); ?>
 
 <?= $this->section('isi'); ?>
+
 <main id="main" class="main">
     <section class="section">
         <div class="pagetitle">
@@ -29,4 +30,5 @@
         </div>
     </section>
 </main>
+
 <?= $this->endSection(); ?>

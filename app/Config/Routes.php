@@ -17,6 +17,7 @@ $routes->get('/berita', 'Page::berita');
 
 
 $routes->get('/pageadmin', 'Admin::admin');
+$routes->get('/pageuser', 'User::user');
 
 
 $routes->get('/konten', 'Konten::index');
@@ -34,9 +35,18 @@ $routes->post('/users/update/(:num)', 'Users::update/$1');
 $routes->get('/users/delete/(:num)', 'Users::delete/$1');
 
 $routes->get('/pengaduan', 'Pengaduan::index');
-$routes->get('/pengaduan/create', 'Pengaduan::create');
 $routes->post('/pengaduan/store', 'Pengaduan::store');
 $routes->get('/pengaduan/edit/(:num)', 'Pengaduan::edit/$1');
 $routes->post('/pengaduan/update/(:num)', 'Pengaduan::update/$1');
 $routes->get('/pengaduan/delete/(:num)', 'Pengaduan::delete/$1');
 
+$routes->get('/pengaduanuser/indexuser', 'Pengaduan::indexuser');
+$routes->get('/pengaduanuser/create', 'Pengaduan::create');
+
+$routes->get('/pengaduan/create-pengaduan', 'Pengaduan::createPengaduan');
+$routes->post('/pengaduan/store-pengaduan', 'Pengaduan::storePengaduan');
+
+$routes->get('/admin/manage-pengaduan', 'PengaduanController::managePengaduan');
+$routes->get('/admin/edit-pengaduan/(:num)', 'PengaduanController::editPengaduan/$1');
+$routes->post('/admin/update-pengaduan/(:num)', 'PengaduanController::updatePengaduan/$1');
+$routes->get('/admin/delete-pengaduan/(:num)', 'PengaduanController::deletePengaduan/$1');
